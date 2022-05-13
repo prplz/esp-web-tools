@@ -4,7 +4,8 @@ import "./install-dialog.js";
 export const connect = async (button: InstallButton) => {
   let port: SerialPort | undefined;
   try {
-    port = await navigator.serial.requestPort();
+    // VID/PID of esp32-s2 in download mode
+    port = await navigator.serial.requestPort({ filters: [{ usbVendorId: 0x303a, usbProductId: 0x0002 }] });
   } catch (err: any) {
     if ((err as DOMException).name === "NotFoundError") {
       import("./no-port-picked/index").then((mod) =>

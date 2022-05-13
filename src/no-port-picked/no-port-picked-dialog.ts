@@ -17,43 +17,8 @@ class EwtNoPortPickedDialog extends LitElement {
         @closed=${this._handleClose}
       >
         <div>
-          If you didn't select a port because you didn't see your device listed,
-          try the following steps:
+          If your Reflow Master Pro was not listed, make sure it is in firmware update mode (found in settings).
         </div>
-        <ol>
-          <li>
-            Make sure that the device is connected to this computer (the one
-            that runs the browser that shows this website)
-          </li>
-          <li>
-            Most devices have a tiny light when it is powered on. If yours has
-            one, make sure it is on.
-          </li>
-          <li>
-            Make sure you have the right drivers installed. Below are the
-            drivers for common chips used in ESP devices:
-            <ul>
-              <li>
-                CP2102 (square chip):
-                <a
-                  href="https://www.silabs.com/products/development-tools/software/usb-to-uart-bridge-vcp-drivers"
-                  target="_blank"
-                  rel="noopener"
-                  >driver</a
-                >
-              </li>
-              <li>
-                CH341:
-                <a
-                  href="https://github.com/nodemcu/nodemcu-devkit/tree/master/Drivers"
-                  target="_blank"
-                  rel="noopener"
-                  >driver</a
-                >
-              </li>
-            </ul>
-          </li>
-        </ol>
         ${this.doTryAgain
           ? html`
               <ewt-button
